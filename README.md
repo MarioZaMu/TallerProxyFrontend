@@ -44,3 +44,10 @@ Para cambiar la paleta de colores basta con editar `src/theme/tokens.css`.
 2. Agrega la variable de entorno `VITE_API_BASE_URL` con la URL pública del backend en Railway, sin `/` final.
 3. **Deploy**. Si cambias la variable después, haz **Redeploy**.
 4. En Railway agrega `ALLOWED_ORIGINS` con la URL de Vercel resultante.
+
+## Producción
+
+- Frontend (Vercel): https://taller-proxy-frontend-weld.vercel.app
+- Backend (Render): https://taller-proxy-backend-2h5j.onrender.com (health: `/actuator/health`)
+
+El backend gratuito se duerme tras 15 minutos sin tráfico: la primera carga puede tardar hasta un minuto y el dashboard muestra un aviso mientras despierta.
