@@ -1,12 +1,13 @@
 import { useIsFetching } from '@tanstack/react-query'
 import { useCallback, useState } from 'react'
 import { Toaster } from 'sonner'
-import { BackendBanner } from './components/BackendBanner'
+import { BackendBanner, type BannerMode } from './components/BackendBanner'
 import { Header } from './components/Header'
 import { LogsSection } from './components/LogsSection'
 import { ResponseChart } from './components/ResponseChart'
 import { ServiceCards } from './components/ServiceCards'
 import { ServiceTester } from './components/ServiceTester'
+import { useSlowStart } from './hooks/useSlowStart'
 import { useSimulateLoad } from './hooks/useSimulateLoad'
 import { useSummary } from './hooks/useSummary'
 import { useTheme } from './hooks/useTheme'
@@ -20,6 +21,8 @@ export default function App() {
   const closeTester = useCallback(() => setTesterOpen(false), [])
 
   const offline = summary.isError
+  const waking = useSlowStart(summary.isPending && !summary.isError, 5000)
+  const bannerMode: BannerMode = offline ? 'offline' : waking ? 'waking' : null
 
   return (
     <div className="mx-auto flex min-h-dvh max-w-7xl flex-col gap-6 px-4 py-6 sm:px-6 lg:px-8 lg:py-8">
@@ -34,7 +37,7 @@ export default function App() {
         fetching={fetching}
       />
 
-      <BackendBanner visible={offline} retrying={summary.isFetching} onRetry={() => void summary.refetch()} />
+      <BackendBanner mode={bannerMode} retrying={summary.isFetching} onRetry={() => void summary.refetch()} />
 
       <main className="flex flex-col gap-6">
         <ServiceCards summary={summary.data} />
