@@ -41,9 +41,9 @@ Para cambiar la paleta de colores basta con editar `src/theme/tokens.css`.
 ## Despliegue en Vercel
 
 1. En <https://vercel.com/new> importa este repositorio (Vercel detecta Vite; `vercel.json` ya está incluido).
-2. Agrega la variable de entorno `VITE_API_BASE_URL` con la URL pública del backend en Railway, sin `/` final.
+2. Agrega la variable de entorno `VITE_API_BASE_URL` con la URL pública del backend (Render o Railway), sin `/` final.
 3. **Deploy**. Si cambias la variable después, haz **Redeploy**.
-4. En Railway agrega `ALLOWED_ORIGINS` con la URL de Vercel resultante.
+4. En el backend agrega `ALLOWED_ORIGINS` con la URL de Vercel resultante.
 
 ## Producción
 
