@@ -3,6 +3,7 @@ import { AlertTriangle, CheckCircle2, CircleDashed, CreditCard, Package, Shoppin
 import { motion } from 'framer-motion'
 import type { ComponentType } from 'react'
 import { ERROR_RATE_THRESHOLD, type ServiceDefinition } from '../lib/constants'
+import { numberFormatter } from '../lib/format'
 import type { ServiceMetrics } from '../types/api'
 import { AnimatedNumber } from './AnimatedNumber'
 import { Skeleton } from './Skeleton'
@@ -93,7 +94,7 @@ export function ServiceCard({ definition, metrics, index }: Props) {
 
       {hasCalls && (
         <p className={clsx('mt-5 text-xs', hasProblems ? 'font-medium text-danger' : 'text-muted')}>
-          Tasa de error: <span className="tabular font-mono">{metrics?.errorRate.toFixed(1)}%</span>
+          Tasa de error: <span className="tabular font-mono">{numberFormatter(1).format(metrics?.errorRate ?? 0)}%</span>
           {hasProblems && ` (supera el ${ERROR_RATE_THRESHOLD}%)`}
         </p>
       )}
