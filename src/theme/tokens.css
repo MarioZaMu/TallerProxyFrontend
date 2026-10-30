@@ -1,0 +1,105 @@
+/*
+ * DESIGN TOKENS: the single place that defines the look of the app.
+ * To change the palette, edit only the variables in this file.
+ * (Temporary neutral palette until the final colors are chosen.)
+ */
+
+:root,
+:root[data-theme='light'] {
+  color-scheme: light;
+
+  /* surfaces */
+  --bg: #f4f5f7;
+  --surface: #ffffff;
+  --surface-2: #eef0f3;
+  --line: #e2e5ea;
+
+  /* text */
+  --fg: #111827;
+  --muted: #5b6472;
+
+  /* brand */
+  --accent: #2563eb;
+  --accent-fg: #ffffff;
+
+  /* semantic */
+  --success: #15803d;
+  --danger: #dc2626;
+  --warning: #b45309;
+
+  /* chart series (one per microservice) */
+  --series-inventory: #2563eb;
+  --series-orders: #d97706;
+  --series-payments: #0d9488;
+
+  /* shape */
+  --r-sm: 8px;
+  --r-md: 12px;
+  --r-lg: 16px;
+
+  /* elevation (tinted, never pure black) */
+  --shadow-card: 0 1px 2px rgb(15 23 42 / 0.05), 0 8px 24px -12px rgb(15 23 42 / 0.12);
+  --shadow-pop: 0 12px 40px -8px rgb(15 23 42 / 0.25);
+}
+
+:root[data-theme='dark'] {
+  color-scheme: dark;
+
+  --bg: #0d1117;
+  --surface: #151b24;
+  --surface-2: #1c2430;
+  --line: #28323f;
+
+  --fg: #e6eaf0;
+  --muted: #9aa6b6;
+
+  --accent: #4c8dff;
+  --accent-fg: #07101f;
+
+  --success: #34d399;
+  --danger: #f87171;
+  --warning: #fbbf24;
+
+  --series-inventory: #60a5fa;
+  --series-orders: #fbbf24;
+  --series-payments: #2dd4bf;
+
+  --shadow-card: 0 1px 2px rgb(0 0 0 / 0.35), 0 10px 30px -14px rgb(0 0 0 / 0.6);
+  --shadow-pop: 0 16px 48px -8px rgb(0 0 0 / 0.65);
+}
+
+:root {
+  --accent-soft: color-mix(in srgb, var(--accent) 12%, transparent);
+  --success-soft: color-mix(in srgb, var(--success) 14%, transparent);
+  --danger-soft: color-mix(in srgb, var(--danger) 12%, transparent);
+  --warning-soft: color-mix(in srgb, var(--warning) 14%, transparent);
+}
+
+/* Expose the tokens as Tailwind utilities (bg-surface, text-muted, border-line, rounded-md ...). */
+@theme inline {
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-line: var(--line);
+  --color-fg: var(--fg);
+  --color-muted: var(--muted);
+  --color-accent: var(--accent);
+  --color-accent-fg: var(--accent-fg);
+  --color-accent-soft: var(--accent-soft);
+  --color-success: var(--success);
+  --color-success-soft: var(--success-soft);
+  --color-danger: var(--danger);
+  --color-danger-soft: var(--danger-soft);
+  --color-warning: var(--warning);
+  --color-warning-soft: var(--warning-soft);
+
+  --radius-sm: var(--r-sm);
+  --radius-md: var(--r-md);
+  --radius-lg: var(--r-lg);
+
+  --shadow-card: var(--shadow-card);
+  --shadow-pop: var(--shadow-pop);
+
+  --font-sans: 'Inter Variable', ui-sans-serif, system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono Variable', ui-monospace, SFMono-Regular, Menlo, monospace;
+}
