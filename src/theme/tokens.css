@@ -1,7 +1,7 @@
 /*
  * DESIGN TOKENS: the single place that defines the look of the app.
  * To change the palette, edit only the variables in this file.
- * (Temporary neutral palette until the final colors are chosen.)
+ * (Palette: cream, ink black, mustard yellow and orange-red.)
  */
 
 :root,
@@ -9,28 +9,28 @@
   color-scheme: light;
 
   /* surfaces */
-  --bg: #f4f5f7;
-  --surface: #ffffff;
-  --surface-2: #eef0f3;
-  --line: #e2e5ea;
+  --bg: #f7f0de;
+  --surface: #fcf8ec;
+  --surface-2: #efe4c8;
+  --line: #ddcfa9;
 
   /* text */
-  --fg: #111827;
-  --muted: #5b6472;
+  --fg: #15171b;
+  --muted: #5e5747;
 
   /* brand */
-  --accent: #2563eb;
+  --accent: #d6381a;
   --accent-fg: #ffffff;
 
   /* semantic */
-  --success: #15803d;
-  --danger: #dc2626;
-  --warning: #b45309;
+  --success: #2f7d3e;
+  --danger: #b3261e;
+  --warning: #9a6a00;
 
   /* chart series (one per microservice) */
-  --series-inventory: #2563eb;
-  --series-orders: #d97706;
-  --series-payments: #0d9488;
+  --series-inventory: #15171b;
+  --series-orders: #e3a812;
+  --series-payments: #e4631d;
 
   /* shape */
   --r-sm: 8px;
@@ -38,31 +38,31 @@
   --r-lg: 16px;
 
   /* elevation (tinted, never pure black) */
-  --shadow-card: 0 1px 2px rgb(15 23 42 / 0.05), 0 8px 24px -12px rgb(15 23 42 / 0.12);
-  --shadow-pop: 0 12px 40px -8px rgb(15 23 42 / 0.25);
+  --shadow-card: 0 1px 2px rgb(60 40 10 / 0.06), 0 8px 24px -12px rgb(60 40 10 / 0.18);
+  --shadow-pop: 0 12px 40px -8px rgb(60 40 10 / 0.3);
 }
 
 :root[data-theme='dark'] {
   color-scheme: dark;
 
-  --bg: #0d1117;
-  --surface: #151b24;
-  --surface-2: #1c2430;
-  --line: #28323f;
+  --bg: #14161a;
+  --surface: #1c1f25;
+  --surface-2: #262a32;
+  --line: #343842;
 
-  --fg: #e6eaf0;
-  --muted: #9aa6b6;
+  --fg: #f7f0de;
+  --muted: #aaa38e;
 
-  --accent: #4c8dff;
-  --accent-fg: #07101f;
+  --accent: #f0b72b;
+  --accent-fg: #15171b;
 
-  --success: #34d399;
-  --danger: #f87171;
-  --warning: #fbbf24;
+  --success: #7fc787;
+  --danger: #ff6b5b;
+  --warning: #f0b72b;
 
-  --series-inventory: #60a5fa;
-  --series-orders: #fbbf24;
-  --series-payments: #2dd4bf;
+  --series-inventory: #f7f0de;
+  --series-orders: #f0b72b;
+  --series-payments: #ff6a3d;
 
   --shadow-card: 0 1px 2px rgb(0 0 0 / 0.35), 0 10px 30px -14px rgb(0 0 0 / 0.6);
   --shadow-pop: 0 16px 48px -8px rgb(0 0 0 / 0.65);
